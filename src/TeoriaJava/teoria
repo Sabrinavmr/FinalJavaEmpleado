@@ -1,0 +1,74 @@
+# Explicación de la Línea de Código en Java
+
+La línea de código que se comparte es:
+
+```java
+System.out.printf("%-15s %-30s %-15s %-15s%n", " Código", " Denominación", " % Porcentaje", "$ Monto");
+```
+
+## Descripción General
+El método **`System.out.printf`** se utiliza en Java para dar formato a la salida en consola. Este método permite personalizar cómo se imprimen cadenas, números y otros datos.
+
+### 1. **Formato del Marcador de Posición**
+La cadena dentro del `printf` contiene varios marcadores de posición que especifican cómo se deben formatear los valores.
+
+- **`%-15s`**:
+  - `-`: Alinea el texto a la izquierda (sin el `-`, se alinea a la derecha).
+  - `15`: Especifica un ancho de 15 caracteres para la salida.
+  - `s`: Indica que el marcador de posición es para una **cadena de texto (`String`)**.
+
+  Ejemplo: Para el texto "Código", reserva 15 espacios y lo alinea a la izquierda.
+
+- **`%-30s`**: Reserva 30 caracteres para una cadena y la alinea a la izquierda.
+
+- **`%-15s`**: Igual que el anterior, pero con un ancho de 15 caracteres.
+
+- **`%n`**: Representa un salto de línea (similar a `\n`). Esto asegura compatibilidad multiplataforma.
+
+### 2. **Valores Proporcionados**
+Después de la cadena de formato, los valores proporcionados se imprimen en el mismo orden en que aparecen.
+
+- **`" Código"`**: Corresponde al primer marcador (`%-15s`).
+- **`" Denominación"`**: Corresponde al segundo marcador (`%-30s`).
+- **`" % Porcentaje"`**: Corresponde al tercer marcador (`%-15s`).
+- **`"$ Monto"`**: Corresponde al cuarto marcador (`%-15s`).
+
+### 3. **Salida Esperada**
+La salida en consola se verá así:
+
+```
+ Código         Denominación                  % Porcentaje    $ Monto
+```
+
+## Ejemplo Completo
+Si queremos imprimir una tabla con datos de ejemplo, podemos extender la lógica:
+
+```java
+System.out.printf("%-15s %-30s %-15s %-15s%n", "Código", "Denominación", "% Porcentaje", "$ Monto");
+System.out.printf("%-15s %-30s %-15s %-15s%n", "100", "Presentismo", "11%", "11000");
+System.out.printf("%-15s %-30s %-15s %-15s%n", "101", "Título Profesional", "30%", "30000");
+```
+
+### Salida en Consola
+```
+Código         Denominación                  % Porcentaje    $ Monto
+100             Presentismo                   11%             11000
+101             Título Profesional            30%             30000
+```
+
+## Utilidad del `printf`
+
+- **Alinear columnas en tablas**: Hace que los datos sean más legibles.
+- **Personalización**: Permite especificar exactamente cómo deben mostrarse los datos (por ejemplo, alinear, fijar anchos o agregar formato).
+
+## Resumen de Modificadores del Formato
+| Formato      | Descripción                             |
+|--------------|-----------------------------------------|
+| `%-15s`      | Cadena alineada a la izquierda con ancho de 15 |
+| `%n`         | Salto de línea                         |
+| `%d`         | Entero                                 |
+| `%f`         | Decimal                                |
+| `%x`         | Entero en formato hexadecimal         |
+
+Con estas herramientas, puedes crear tablas formateadas de manera sencilla en Java. ¿Quieres aplicar esto a tu proyecto? ☺
+
